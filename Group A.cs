@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Football_Managment;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,20 @@ namespace Football_Managment
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Group_Name group_Name = new Group_Name();
+            this.Hide();
+            group_Name.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Group_Name group_Name = new Group_Name();
+            this.Hide();
+            group_Name.Show();
         }
     }
 }

@@ -16,5 +16,19 @@ namespace Football_Managment
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AdminDashboard admindashboard = new AdminDashboard();
+            this.Hide();
+            admindashboard.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           Group_Name group_Name = new Group_Name();
+            this.Hide();
+            group_Name.Show();
+        }
     }
 }

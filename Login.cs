@@ -16,5 +16,26 @@ namespace Football_Managment
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            this.Hide();
+            home.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Registration registration = new Registration();
+            this.Hide();
+            registration.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminDashboard adminDashboard = new AdminDashboard();
+            this.Hide();
+            adminDashboard.Show();
+        }
     }
 }

@@ -16,5 +16,22 @@ namespace Football_Managment
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Update_Tournament update_Tournament = new Update_Tournament();
+            this.Hide();
+            update_Tournament.Show();
+        }
     }
 }

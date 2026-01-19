@@ -30,6 +30,7 @@ namespace Football_Managment
 
             this.Hide();
             score_Board_Ad_Mod.Show();
+
         }
     }
 }

@@ -33,5 +33,33 @@ namespace Football_Managment
             this.Hide();
             update_Tournament.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Group_A group_A = new Group_A();
+            this.Hide();
+            group_A.Show();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Group_B group_B = new Group_B();
+            this.Hide();
+            group_B.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Group_C group_C = new Group_C();
+            this.Hide();
+            group_C.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Group_D group_D = new Group_D();
+            this.Hide(); group_D.Show();
+        }
     }
 }

@@ -76,11 +76,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 415);
+            this.button4.Location = new System.Drawing.Point(12, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Back";
+            this.button4.Text = "<--";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // Moderator_Dashboard

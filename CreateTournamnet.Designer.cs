@@ -82,7 +82,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "CreateTournamnet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateTournamnet";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateTournamnet_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

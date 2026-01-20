@@ -54,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(228, 126);
+            this.label2.Location = new System.Drawing.Point(233, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 1;
@@ -155,7 +155,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

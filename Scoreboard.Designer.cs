@@ -191,6 +191,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "Scoreboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scoreboard";
             this.ResumeLayout(false);
             this.PerformLayout();

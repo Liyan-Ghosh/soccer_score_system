@@ -167,6 +167,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Name = "Score_Board_ad_Mod";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Score_Board_ad_Mod";
             this.ResumeLayout(false);
             this.PerformLayout();

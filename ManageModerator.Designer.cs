@@ -175,6 +175,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "ManageModerator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageModerator";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

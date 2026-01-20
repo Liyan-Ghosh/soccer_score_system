@@ -32,5 +32,17 @@ namespace Football_Managment
             score_Board_Ad_Mod.Show();
 
         }
+
+        private void Moderator_Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
+        }
     }
 }

@@ -48,5 +48,10 @@ namespace Football_Managment
             this.Hide();
             scoreboard.Show();
         }
+
+        private void Knockout_Stage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace Football_Managment
         {
             InitializeComponent();
         }
+
+        private void Group_stage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

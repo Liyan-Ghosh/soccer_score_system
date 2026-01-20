@@ -821,7 +821,7 @@ namespace Football_Managment {
             
             private global::System.Data.DataColumn columnDraw;
             
-            private global::System.Data.DataColumn columnGroup;
+            private global::System.Data.DataColumn columnGroup_Name;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -914,9 +914,9 @@ namespace Football_Managment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GroupColumn {
+            public global::System.Data.DataColumn Group_NameColumn {
                 get {
-                    return this.columnGroup;
+                    return this.columnGroup_Name;
                 }
             }
             
@@ -957,7 +957,7 @@ namespace Football_Managment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TeamsRow AddTeamsRow(string Name, int Points, int Match_Count, int Win, int Lose, int Draw, string Group) {
+            public TeamsRow AddTeamsRow(string Name, int Points, int Match_Count, int Win, int Lose, int Draw, string Group_Name) {
                 TeamsRow rowTeamsRow = ((TeamsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -967,7 +967,7 @@ namespace Football_Managment {
                         Win,
                         Lose,
                         Draw,
-                        Group};
+                        Group_Name};
                 rowTeamsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTeamsRow);
                 return rowTeamsRow;
@@ -1004,7 +1004,7 @@ namespace Football_Managment {
                 this.columnWin = base.Columns["Win"];
                 this.columnLose = base.Columns["Lose"];
                 this.columnDraw = base.Columns["Draw"];
-                this.columnGroup = base.Columns["Group"];
+                this.columnGroup_Name = base.Columns["Group_Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1024,8 +1024,8 @@ namespace Football_Managment {
                 base.Columns.Add(this.columnLose);
                 this.columnDraw = new global::System.Data.DataColumn("Draw", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDraw);
-                this.columnGroup = new global::System.Data.DataColumn("Group", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGroup);
+                this.columnGroup_Name = new global::System.Data.DataColumn("Group_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGroup_Name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1035,7 +1035,7 @@ namespace Football_Managment {
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnName.MaxLength = 50;
-                this.columnGroup.MaxLength = 50;
+                this.columnGroup_Name.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2458,17 +2458,17 @@ namespace Football_Managment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Group {
+            public string Group_Name {
                 get {
                     try {
-                        return ((string)(this[this.tableTeams.GroupColumn]));
+                        return ((string)(this[this.tableTeams.Group_NameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Group\' in table \'Teams\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Group_Name\' in table \'Teams\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTeams.GroupColumn] = value;
+                    this[this.tableTeams.Group_NameColumn] = value;
                 }
             }
             
@@ -2546,14 +2546,14 @@ namespace Football_Managment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGroupNull() {
-                return this.IsNull(this.tableTeams.GroupColumn);
+            public bool IsGroup_NameNull() {
+                return this.IsNull(this.tableTeams.Group_NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGroupNull() {
-                this[this.tableTeams.GroupColumn] = global::System.Convert.DBNull;
+            public void SetGroup_NameNull() {
+                this[this.tableTeams.Group_NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3832,11 +3832,11 @@ SELECT Id, Team_A, Team_B, A_Score, B_Score, Type, Status FROM Matches WHERE (Id
             tableMapping.ColumnMappings.Add("Win", "Win");
             tableMapping.ColumnMappings.Add("Lose", "Lose");
             tableMapping.ColumnMappings.Add("Draw", "Draw");
-            tableMapping.ColumnMappings.Add("Group", "Group");
+            tableMapping.ColumnMappings.Add("Group_Name", "Group_Name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Teams] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Points = 1 AND [Points] IS NULL) OR ([Points] = @Original_Points)) AND ((@IsNull_Match_Count = 1 AND [Match_Count] IS NULL) OR ([Match_Count] = @Original_Match_Count)) AND ((@IsNull_Win = 1 AND [Win] IS NULL) OR ([Win] = @Original_Win)) AND ((@IsNull_Lose = 1 AND [Lose] IS NULL) OR ([Lose] = @Original_Lose)) AND ((@IsNull_Draw = 1 AND [Draw] IS NULL) OR ([Draw] = @Original_Draw)) AND ((@IsNull_Group = 1 AND [Group] IS NULL) OR ([Group] = @Original_Group)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Teams] WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Points = 1 AND [Points] IS NULL) OR ([Points] = @Original_Points)) AND ((@IsNull_Match_Count = 1 AND [Match_Count] IS NULL) OR ([Match_Count] = @Original_Match_Count)) AND ((@IsNull_Win = 1 AND [Win] IS NULL) OR ([Win] = @Original_Win)) AND ((@IsNull_Lose = 1 AND [Lose] IS NULL) OR ([Lose] = @Original_Lose)) AND ((@IsNull_Draw = 1 AND [Draw] IS NULL) OR ([Draw] = @Original_Draw)) AND ((@IsNull_Group_Name = 1 AND [Group_Name] IS NULL) OR ([Group_Name] = @Original_Group_Name)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3851,12 +3851,12 @@ SELECT Id, Team_A, Team_B, A_Score, B_Score, Type, Status FROM Matches WHERE (Id
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lose", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Draw", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Draw", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Draw", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Draw", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Teams] ([Name], [Points], [Match_Count], [Win], [Lose], [Draw], [Group]) VALUES (@Name, @Points, @Match_Count, @Win, @Lose, @Draw, @Group);
-SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Teams] ([Name], [Points], [Match_Count], [Win], [Lose], [Draw], [Group_Name]) VALUES (@Name, @Points, @Match_Count, @Win, @Lose, @Draw, @Group_Name);
+SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, Group_Name FROM Teams WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Points", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Points", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3864,11 +3864,11 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Win", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Win", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Draw", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Draw", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Teams] SET [Name] = @Name, [Points] = @Points, [Match_Count] = @Match_Count, [Win] = @Win, [Lose] = @Lose, [Draw] = @Draw, [Group] = @Group WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Points = 1 AND [Points] IS NULL) OR ([Points] = @Original_Points)) AND ((@IsNull_Match_Count = 1 AND [Match_Count] IS NULL) OR ([Match_Count] = @Original_Match_Count)) AND ((@IsNull_Win = 1 AND [Win] IS NULL) OR ([Win] = @Original_Win)) AND ((@IsNull_Lose = 1 AND [Lose] IS NULL) OR ([Lose] = @Original_Lose)) AND ((@IsNull_Draw = 1 AND [Draw] IS NULL) OR ([Draw] = @Original_Draw)) AND ((@IsNull_Group = 1 AND [Group] IS NULL) OR ([Group] = @Original_Group)));
-SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Teams] SET [Name] = @Name, [Points] = @Points, [Match_Count] = @Match_Count, [Win] = @Win, [Lose] = @Lose, [Draw] = @Draw, [Group_Name] = @Group_Name WHERE (([Id] = @Original_Id) AND ((@IsNull_Name = 1 AND [Name] IS NULL) OR ([Name] = @Original_Name)) AND ((@IsNull_Points = 1 AND [Points] IS NULL) OR ([Points] = @Original_Points)) AND ((@IsNull_Match_Count = 1 AND [Match_Count] IS NULL) OR ([Match_Count] = @Original_Match_Count)) AND ((@IsNull_Win = 1 AND [Win] IS NULL) OR ([Win] = @Original_Win)) AND ((@IsNull_Lose = 1 AND [Lose] IS NULL) OR ([Lose] = @Original_Lose)) AND ((@IsNull_Draw = 1 AND [Draw] IS NULL) OR ([Draw] = @Original_Draw)) AND ((@IsNull_Group_Name = 1 AND [Group_Name] IS NULL) OR ([Group_Name] = @Original_Group_Name)));
+SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, Group_Name FROM Teams WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Points", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Points", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3876,7 +3876,7 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Win", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Win", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lose", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Draw", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Draw", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Group_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3890,8 +3890,8 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lose", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lose", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Draw", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Draw", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Draw", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Draw", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Group_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Group_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Group_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -3908,7 +3908,7 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM dbo.Teams";
+            this._commandCollection[0].CommandText = "SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, Group_Name FROM Teams";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3969,7 +3969,7 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Name, global::System.Nullable<int> Original_Points, global::System.Nullable<int> Original_Match_Count, global::System.Nullable<int> Original_Win, global::System.Nullable<int> Original_Lose, global::System.Nullable<int> Original_Draw, string Original_Group) {
+        public virtual int Delete(int Original_Id, string Original_Name, global::System.Nullable<int> Original_Points, global::System.Nullable<int> Original_Match_Count, global::System.Nullable<int> Original_Win, global::System.Nullable<int> Original_Lose, global::System.Nullable<int> Original_Draw, string Original_Group_Name) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4019,13 +4019,13 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_Group == null)) {
+            if ((Original_Group_Name == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Group));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Group_Name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4047,7 +4047,7 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, global::System.Nullable<int> Points, global::System.Nullable<int> Match_Count, global::System.Nullable<int> Win, global::System.Nullable<int> Lose, global::System.Nullable<int> Draw, string Group) {
+        public virtual int Insert(string Name, global::System.Nullable<int> Points, global::System.Nullable<int> Match_Count, global::System.Nullable<int> Win, global::System.Nullable<int> Lose, global::System.Nullable<int> Draw, string Group_Name) {
             if ((Name == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4084,11 +4084,11 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Group == null)) {
+            if ((Group_Name == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Group));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Group_Name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4117,7 +4117,7 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
                     global::System.Nullable<int> Win, 
                     global::System.Nullable<int> Lose, 
                     global::System.Nullable<int> Draw, 
-                    string Group, 
+                    string Group_Name, 
                     int Original_Id, 
                     string Original_Name, 
                     global::System.Nullable<int> Original_Points, 
@@ -4125,7 +4125,7 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
                     global::System.Nullable<int> Original_Win, 
                     global::System.Nullable<int> Original_Lose, 
                     global::System.Nullable<int> Original_Draw, 
-                    string Original_Group, 
+                    string Original_Group_Name, 
                     int Id) {
             if ((Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -4163,11 +4163,11 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Group == null)) {
+            if ((Group_Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Group));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Group_Name));
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
@@ -4218,13 +4218,13 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Original_Group == null)) {
+            if ((Original_Group_Name == null)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Group));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Group_Name));
             }
             this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -4247,8 +4247,8 @@ SELECT Id, Name, Points, Match_Count, Win, Lose, Draw, [Group] FROM Teams WHERE 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, global::System.Nullable<int> Points, global::System.Nullable<int> Match_Count, global::System.Nullable<int> Win, global::System.Nullable<int> Lose, global::System.Nullable<int> Draw, string Group, int Original_Id, string Original_Name, global::System.Nullable<int> Original_Points, global::System.Nullable<int> Original_Match_Count, global::System.Nullable<int> Original_Win, global::System.Nullable<int> Original_Lose, global::System.Nullable<int> Original_Draw, string Original_Group) {
-            return this.Update(Name, Points, Match_Count, Win, Lose, Draw, Group, Original_Id, Original_Name, Original_Points, Original_Match_Count, Original_Win, Original_Lose, Original_Draw, Original_Group, Original_Id);
+        public virtual int Update(string Name, global::System.Nullable<int> Points, global::System.Nullable<int> Match_Count, global::System.Nullable<int> Win, global::System.Nullable<int> Lose, global::System.Nullable<int> Draw, string Group_Name, int Original_Id, string Original_Name, global::System.Nullable<int> Original_Points, global::System.Nullable<int> Original_Match_Count, global::System.Nullable<int> Original_Win, global::System.Nullable<int> Original_Lose, global::System.Nullable<int> Original_Draw, string Original_Group_Name) {
+            return this.Update(Name, Points, Match_Count, Win, Lose, Draw, Group_Name, Original_Id, Original_Name, Original_Points, Original_Match_Count, Original_Win, Original_Lose, Original_Draw, Original_Group_Name, Original_Id);
         }
     }
     

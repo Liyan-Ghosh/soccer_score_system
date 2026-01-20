@@ -152,7 +152,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

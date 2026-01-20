@@ -21,5 +21,12 @@ namespace Football_Managment
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Score_Board_ad_Mod score_Board_Ad_Mod = new Score_Board_ad_Mod();
+            this.Hide();
+            score_Board_Ad_Mod.Show();
+        }
     }
 }

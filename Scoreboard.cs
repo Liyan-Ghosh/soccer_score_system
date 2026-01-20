@@ -28,5 +28,12 @@ namespace Football_Managment
             this.Hide();
             home.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Knockout_Stage knockout_Stage = new Knockout_Stage();
+            this.Hide();
+            knockout_Stage.Show();
+        }
     }
 }

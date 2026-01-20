@@ -41,5 +41,12 @@ namespace Football_Managment
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Scoreboard scoreboard = new Scoreboard();
+            this.Hide();
+            scoreboard.Show();
+        }
     }
 }

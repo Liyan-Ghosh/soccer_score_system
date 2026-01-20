@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -144,6 +145,11 @@
     <Compile Include="Score_Board_ad&amp;Mod.Designer.cs">
       <DependentUpon>Score_Board_ad&amp;Mod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Soccer_Score_SystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Soccer_Score_SystemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Update_Tournament.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Soccer_Score_SystemDataSet.xsc">
+      <DependentUpon>Soccer_Score_SystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Soccer_Score_SystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Soccer_Score_SystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Soccer_Score_SystemDataSet.xss">
+      <DependentUpon>Soccer_Score_SystemDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Football_Managment
 {
     public partial class Registration : Form
     {
+        private static readonly string ConnectionString =
+    ConfigurationManager.ConnectionStrings["Football_Managment.Properties.Settings.Soccer_Score_System"].ConnectionString;
         public Registration()
         {
             InitializeComponent();

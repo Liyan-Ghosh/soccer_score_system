@@ -52,7 +52,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 71);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Create tournament";
+            this.button2.Text = "Create Tournament";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -78,7 +78,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(509, 244);
+            this.button6.Location = new System.Drawing.Point(293, 237);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(99, 66);
             this.button6.TabIndex = 5;

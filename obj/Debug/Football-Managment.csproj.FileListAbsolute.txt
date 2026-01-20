@@ -24,3 +24,4 @@ D:\C#code\Football_System\Football-Managment\Football-Managment\obj\Debug\Footba
 D:\C#code\Football_System\Football-Managment\Football-Managment\obj\Debug\Football_Managment.Scoreboard.resources
 D:\C#code\Football_System\Football-Managment\Football-Managment\obj\Debug\Football_Managment.Score_Board_ad_Mod.resources
 D:\C#code\Football_System\Football-Managment\Football-Managment\obj\Debug\Football_Managment.Update_Tournament.resources
+D:\C#code\Football_System\Football-Managment\Football-Managment\obj\Debug\Football_Managment.Knockout_Stage.resources

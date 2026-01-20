@@ -20,9 +20,7 @@ namespace Football_Managment
         private void getLoginPage(object sender, EventArgs e)
         {
             var login = new Login();
-            login.FormClosed += (s, args) => Close();
-
-            Hide();
+            this.Hide();
             login.Show();
         }
 

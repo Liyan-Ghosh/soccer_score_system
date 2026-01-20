@@ -21,5 +21,12 @@ namespace Football_Managment
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Group_Name group_Name = new Group_Name();
+            this.Hide();
+            group_Name.Show();
+        }
     }
 }

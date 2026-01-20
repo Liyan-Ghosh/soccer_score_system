@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Football_Managment
 {
     public partial class Registration : Form
     {
+        private static readonly string ConnectionString =
+    ConfigurationManager.ConnectionStrings["Football_Managment.Properties.Settings.Soccer_Score_System"].ConnectionString;
         public Registration()
         {
             InitializeComponent();
@@ -30,6 +33,20 @@ namespace Football_Managment
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
         }
     }
 }

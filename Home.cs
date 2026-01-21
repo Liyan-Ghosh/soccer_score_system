@@ -32,5 +32,10 @@ namespace Football_Managment
             Hide();
             scoreboard.Show();
         }
+
+        private void Home_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

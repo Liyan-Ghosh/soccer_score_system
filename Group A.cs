@@ -36,5 +36,10 @@ namespace Football_Managment
             this.Hide();
             group_Name.Show();
         }
+
+        private void Group_A_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

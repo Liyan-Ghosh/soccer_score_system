@@ -34,13 +34,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(105, 84);
+            this.button1.Location = new System.Drawing.Point(28, 155);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 71);
+            this.button1.Size = new System.Drawing.Size(161, 134);
             this.button1.TabIndex = 0;
             this.button1.Text = "Manage Moderator";
             this.button1.UseVisualStyleBackColor = true;
@@ -48,9 +49,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(294, 84);
+            this.button2.Location = new System.Drawing.Point(207, 155);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 71);
+            this.button2.Size = new System.Drawing.Size(164, 134);
             this.button2.TabIndex = 1;
             this.button2.Text = "Create Tournament";
             this.button2.UseVisualStyleBackColor = true;
@@ -58,9 +59,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(509, 84);
+            this.button3.Location = new System.Drawing.Point(390, 155);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 71);
+            this.button3.Size = new System.Drawing.Size(169, 134);
             this.button3.TabIndex = 2;
             this.button3.Text = "Update Tournamnet";
             this.button3.UseVisualStyleBackColor = true;
@@ -68,9 +69,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(105, 244);
+            this.button4.Location = new System.Drawing.Point(581, 155);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 59);
+            this.button4.Size = new System.Drawing.Size(171, 134);
             this.button4.TabIndex = 3;
             this.button4.Text = "Score Board";
             this.button4.UseVisualStyleBackColor = true;
@@ -78,7 +79,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(293, 237);
+            this.button6.Location = new System.Drawing.Point(12, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(99, 66);
             this.button6.TabIndex = 5;
@@ -89,11 +90,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 30);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(274, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 16);
+            this.label1.Size = new System.Drawing.Size(259, 32);
             this.label1.TabIndex = 6;
             this.label1.Text = "Admin DashBoard";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(303, 321);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(171, 56);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Finish";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // AdminDashboard
             // 
@@ -101,6 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
@@ -108,7 +122,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "AdminDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminDashboard_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +138,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button5;
     }
 }

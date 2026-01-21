@@ -224,7 +224,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Group_C";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Group_C";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Group_C_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

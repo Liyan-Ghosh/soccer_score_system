@@ -519,7 +519,9 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label1);
             this.Name = "Knockout_Stage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Knockout_Stage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Knockout_Stage_FormClosing);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);

@@ -28,9 +28,9 @@ namespace Football_Managment
                 using (var da = new SqlDataAdapter(cmd))
                 {
                     cmd.CommandText = @"
-SELECT Id,Name, Phone, Email
-FROM Users WHERE type = 'MOD'
-ORDER BY Id DESC;";
+                    SELECT Id,Name, Phone, Email
+                    FROM Users WHERE type = 'MOD'
+                    ORDER BY Id DESC;";
 
                     var dt = new DataTable();
                     con.Open();

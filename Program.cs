@@ -18,7 +18,7 @@ namespace Football_Managment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminDashboard());
+            Application.Run(new Home());
         }
     }
 }

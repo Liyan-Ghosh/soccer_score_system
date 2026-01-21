@@ -13,9 +13,17 @@ namespace Football_Managment
 {
     public partial class Update_Tournament : Form
     {
+        string role;
         private static readonly string ConnectionString = Program.DbAppName;
         public Update_Tournament()
         {
+            InitializeComponent();
+            LoadMatchData();
+        }
+
+        public Update_Tournament(string role)
+        {
+            this.role = role;
             InitializeComponent();
             LoadMatchData();
         }
@@ -68,11 +76,20 @@ namespace Football_Managment
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AdminDashboard admindashboard = new AdminDashboard();
-            this.Hide();
-            admindashboard.Show();
+            if (role == "admin")
+            {
+                AdminDashboard admindashboard = new AdminDashboard();
+                this.Hide();
+                admindashboard.Show();
+            }
+            else
+            {
+                Moderator_Dashboard moderator_Dashboard = new Moderator_Dashboard();
+                this.Hide();
+                moderator_Dashboard.Show();
+            }
         }
-
+            
         private void button1_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(textBox1.Text, out int sA) || !int.TryParse(textBox2.Text, out int sB))

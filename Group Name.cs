@@ -80,7 +80,7 @@ namespace Football_Managment
                         }
                         trans.Commit();
                         MessageBox.Show("Tournament has been started!");
-                        Update_Tournament update_Tournament = new Update_Tournament();
+                        Update_Tournament update_Tournament = new Update_Tournament("admin");
                         this.Hide();
                         update_Tournament.Show();
                     }

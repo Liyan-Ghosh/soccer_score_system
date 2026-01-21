@@ -14,9 +14,17 @@ namespace Football_Managment
     public partial class Score_Board_ad_Mod : Form
     {
         private string matchId;
+        string role;
         private static readonly string ConnectionString = Program.DbAppName;
         public Score_Board_ad_Mod()
         {
+            InitializeComponent();
+            LoadMatchData();
+        }
+
+        public Score_Board_ad_Mod(string role)
+        {
+            this.role = role;
             InitializeComponent();
             LoadMatchData();
         }
@@ -73,9 +81,18 @@ namespace Football_Managment
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AdminDashboard admindashboard = new AdminDashboard();
-            this.Hide();
-            admindashboard.Show();
+            if(role == "admin")
+            {
+                AdminDashboard admindashboard = new AdminDashboard();
+                this.Hide();
+                admindashboard.Show();
+            }
+            else
+            {
+                Moderator_Dashboard moderator_Dashboard = new Moderator_Dashboard();
+                this.Hide();
+                moderator_Dashboard.Show();
+            }
         }
 
         private void DisplayMatchById(string targetId)
@@ -149,8 +166,8 @@ namespace Football_Managment
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Group_stage group_Stage = new Group_stage();
-                this.Hide();
+            Group_stage group_Stage = new Group_stage(role);
+            this.Hide();
             group_Stage.Show();
         }
     }

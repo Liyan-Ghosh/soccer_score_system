@@ -73,16 +73,15 @@ namespace Football_Managment
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Update_Tournament update_Tournament = new Update_Tournament();
+            Update_Tournament update_Tournament = new Update_Tournament("admin");
             this.Hide();
          update_Tournament.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Score_Board_ad_Mod score_Board_Ad_Mod = new Score_Board_ad_Mod();
-
-        this.Hide();
+            Score_Board_ad_Mod score_Board_Ad_Mod = new Score_Board_ad_Mod("admin");
+            this.Hide();
             score_Board_Ad_Mod.Show();
         }
 
@@ -101,6 +100,52 @@ namespace Football_Managment
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var confirm = MessageBox.Show("Are you sure you want to finish the tournament? This will clear all match and team data.",
+                                 "Confirm Finish", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (confirm != DialogResult.Yes) return;
+
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                using (SqlTransaction trans = con.BeginTransaction())
+                {
+                    try
+                    {
+                        using (SqlCommand cmdDeleteMatches = new SqlCommand("DELETE FROM Matches", con, trans))
+                        {
+                            cmdDeleteMatches.ExecuteNonQuery();
+                        }
+
+                        using (SqlCommand cmdDeleteTeams = new SqlCommand("DELETE FROM Teams", con, trans))
+                        {
+                            cmdDeleteTeams.ExecuteNonQuery();
+                        }
+
+                        string updateTourneySql = @"
+                    UPDATE Tournamnets
+                    SET winner = 'End' 
+                    WHERE id = (SELECT MAX(id) FROM Tournamnets)";
+
+                        using (SqlCommand cmdUpdateTourney = new SqlCommand(updateTourneySql, con, trans))
+                        {
+                            cmdUpdateTourney.ExecuteNonQuery();
+                        }
+
+                        trans.Commit();
+                        MessageBox.Show("Tournament finished successfully! Data has been reset.", "Success");
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        MessageBox.Show("An error occurred. Tournament was not finished: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }
